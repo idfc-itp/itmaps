@@ -79,7 +79,9 @@ img{
     border-radius: .5rem;
     margin: 2rem auto;
 }
-
+.scale{
+    transform: scale(1.3) rotate(4deg);
+}
 /* Estilos del header */
 .header{
     height: 50rem;
@@ -250,6 +252,7 @@ img{
 .mapa__img{
     width: 50%;
     height: auto;
+    transition: .4s ease;
 }
 /* Directorio */
 .directorio{

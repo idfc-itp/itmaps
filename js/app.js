@@ -3,6 +3,7 @@ let year = document.querySelector('.footer__year');
 const formularioDirectorio = document.querySelector('.formulario__directorio');
 const formularioMapa = document.querySelector('.formulario__mapa');
 const deptos = document.querySelectorAll('.depto a');
+const mapaResultado = document.querySelector('.mapa__resultado');
 
 const secciones = document.querySelector('.secciones');
 const mapa = document.querySelector('.mapa__content');
@@ -28,6 +29,7 @@ window.onload = ()=>{
     sr.reveal('.info__grid', {delay: 400});
     sr.reveal(mapa, {delay: 800, origin: 'bottom'});
     sr.reveal(secciones, {delay: 800, origin: 'top'});
+    mapaResultado.addEventListener('click', zoomMapa)
 }
 formularioDirectorio.addEventListener('submit', validarFormulario);
 
@@ -104,7 +106,15 @@ function validarFormulario(e){
         }
     }, 7000);
 }
-
+function zoomMapa(){
+    const mapa = document.querySelector('.mapa__img');
+    const scales = document.querySelectorAll('.scale');
+    if(scales.length === 0){
+        mapa.classList.add('scale');   
+        return;
+    }
+    mapa.classList.remove('scale');
+}
 //Función que valida el formulario del mapa y muestra el contenido deseado
 function validarMapa(e){
     e.preventDefault();
@@ -125,16 +135,17 @@ function validarMapa(e){
     }
     switch(formularioInput.value){
         case "direccion":
-            mapaImg.src = './img/direccion';
+            mapaImg.src = './img/rutas/mapa_direccion.jpg';
             break;
         case "sistemas":
-            mapaImg.src = './img/sistemas.png';
+        case "edificioac":
+            mapaImg.src = './img/rutas/mapa_ac.jpg';
             break;
         case "contaduria":
             mapaImg.src = './img/contaduria.jpg';
             break;
         case "serviciosescolares":
-            mapaImg.src = './img/escolares.webp';
+            mapaImg.src = './img/rutas/mapa_escolares.jpg';
             console.log(mapaImg.src);
         break;
         case "administracion":
@@ -144,7 +155,43 @@ function validarMapa(e){
         case "arquitectura":
             mapaImg.src = './img/arquitectura.webp';
         break;
+
+        case "edificiot":
+            mapaImg.src = './img/rutas/mapa_T.jpg';
+        break;
     
+        case "edificios":
+            mapaImg.src = './img/rutas/mapa_s.jpg';
+        break;
+
+        case "edificior":
+            mapaImg.src = './img/rutas/mapa_r.jpg';
+        break;
+
+        case "edificiop":
+            mapaImg.src = './img/rutas/mapa_p.jpg';
+        break;
+
+        case "edificiom":
+            mapaImg.src = './img/rutas/mapa_m.jpg';
+        break;
+
+        case "edificiok":
+            mapaImg.src = './img/rutas/mapa_k.jpg';
+        break;
+
+        case "edificioh":
+            mapaImg.src = './img/rutas/mapa_H.jpg';
+        break;
+
+        case "edificioe":
+            mapaImg.src = './img/rutas/mapa_E.jpg';
+        break;
+
+        case "edificioaa":
+            mapaImg.src = './img/rutas/mapa_aa.jpg';
+        break;
+
         default: 
             mapaImg.src = './img/mapa.jpg'
             mostrarAlerta('No se encontró el destino deseado, intenta con otro', document.querySelector('.mapa__alerta'));
