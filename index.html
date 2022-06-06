@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Información acerca del Instituto Tecnológico de Parral.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>ITMaps</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__contenido">
+                <nav class="navegacion__principal">
+                    <div class="navegacion__logo">
+                        <a href="#">
+                            ITMAPS
+                        </a>
+                    </div> <!-- Fin del contenedor del logo -->
+                    <div class="navegacion__links">
+                        <a href="#mapa" class="navegacion__item">Mapa</a>
+                        <a href="#directorio" class="navegacion__item">Directorio</a>
+                    </div>
+                </nav> <!-- Fin de la navegacio -->
+                <div class="header__heading">
+                    <h1>Instituto Tecnológico de Parral</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="info-secciones">
+        <div class="info-secciones__container">
+            <div class="info__grid">
+                <div class="seccion">
+                    <h2 class="seccion__heading">¿Qué es ITMaps?</h2>
+                    <p class="seccion__info">ITMaps es una herramienta para cualquier persona que necesite ubicarse en el Instituto Tecnológico de Parral, así como encontrar información de los diferentes departamentos de servicios de la institución, ya que esta herramienta cuenta con un directorio y un mapa de la distribución de los edificios</p>
+                </div> <!-- Fin de la sección -->
+                <div class="seccion">
+                    <h2 class="seccion__heading">Directorio</h2>
+                    <p class="seccion__info">En este apartado se podrá encontrar información como los contactos, qué servicios brinda, dónde se ubica y quién es el encargado de los departamentos disponibles en la institución, así como todos los edificios de aulas y la ubicación del coordinador de cada carrera.</p>
+                </div> <!-- Fin de la sección -->
+
+                <div class="seccion">
+                    <h2 class="seccion__heading">Mapa</h2>
+                    <p class="seccion__info">El mapa contiene un croquis con la segmentación de todos los edificios pertenecimentes a la institución, así como su identificación. De igual manera, está diferenciado por colores. Aquí se podrá solicitar una ruta para pdoer llegar a un punto del mapa partiendo de las entradas principales</p>
+                </div> <!-- Fin de la sección -->
+            </div>
+        </div>
+    </section>
+
+    <main id="mapa"> <!-- Inicio del Mapa -->
+        <div class="mapa__container">
+            <h2 class="mapa__heading heading-degradado">Mapa</h2>
+            <!-- Div vació para colocar la alerta del formulario -->
+            <div class="mapa__alerta" data-cy="alerta"></div>
+            <!-- Inicio del form -->
+            <form class="formulario__mapa" data-cy="mapaFormulario">
+                <input class="formulario__input" type="text" name="mapa__input" data-cy="inputMapa" placeholder="Edificio A-B, Dirección, Servicios Escolares...">
+                <input class="formulario__submit" type="submit" value="Ver Ruta">
+            </form> <!-- Fin del form -->
+            <div class="mapa__content">
+                <div class="mapa__simbologia">
+                    <div class="mapa__simbolo">
+                        <p class="mapa__color mapa__color-azul"></p>
+                        <p class="mapa__desc">Edificios que brindan servicios</p>
+                    </div>
+                    <div class="mapa__simbolo">
+                        <p class="mapa__color mapa__color-verde"></p>
+                        <p class="mapa__desc">Edificios de aulas</p>
+                    </div>                
+                    <div class="mapa__simbolo">
+                        <p class="mapa__color mapa__color-naranja"></p>
+                        <p class="mapa__desc">Laboratorios - Talleres</p>
+                    </div>
+                </div>
+                <div class="mapa__resultado">
+                    <img src="./img/mapa.jpg" alt="Imagen del mapa" class="mapa__img">    
+                </div>
+            </div>
+        </div>
+    </main> <!-- Fin del mapa -->
+    
+    <!-- Inicio de la seccion del directorio -->
+    <section id="directorio">
+        <div class="directorio__container">
+            <h2 class="directorio__heading heading-degradado">Directorio</h2>
+            <div class="directorio__alerta" data-cy="alerta"></div>
+            <form class="formulario__directorio" data-cy="directorioFormulario">
+                <input class="formulario__input" type="text" name="directorio__input" placeholder="Escolares, Administración, Asesorias..." data-cy="inputDirectorio">
+                <input class="formulario__submit" type="submit" value="Buscar">
+            </form> <!-- Fin del form -->
+            <div class="navegacion__filtro">
+                <button  class="navegacion__opcion navegacion__opcion-activo" data-filter="all">Todos</button>
+                <button  class="navegacion__opcion" data-filter=".carreras" data-cy="carreras">Carreras</button>
+                <button  class="navegacion__opcion" data-filter=".servicios" data-cy="servicios" >Servicios</button>
+                <button  class="navegacion__opcion" data-filter=".edificios" data-cy="edificios">Edificios</button>
+            </div> <!-- fin de la navegación -->
+
+            <div class="secciones secciones-container">
+                <div class="mix servicios depto-nuevo depto"data-cy="planeacion">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Subdirección de Planeación y Vinculación</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Es encargada de orientación y dirección de los estudiantes con situaciones académicas externas como lo són las residencias y /o servicio social</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Luis Manuel Sáenz Macías</p>
+                        </div>
+                        <a href="#mapa" data-depto="planeacion" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería en Sistemas Computacionales</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionistas capaces de integrar y administrar tecnologías de la información y comunicaciones, que contribuyan a la productividad y el logro de los objetivos estratégicos de las organizaciones; caracterizándose por ser líderes, críticos, competentes y éticos</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Jesús Armando Fino Ortíz</p>
+                        </div>
+                        <a href="#mapa" data-depto="sistemas" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Arquitectura</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar en competencias, profesionistas líderes con excelencia académica y humanística, capaces de diseñar, gestionar y construir el hábitat humano con alto desempeño.</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Graciela Dominguez Carrera</p>
+                        </div>
+                        <a href="#mapa" data-depto="arquitectura" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Contador Público</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionales competitivos, capaces de diseñar, establecer, aplicar, controlar y evaluar sistemas de información financiera, fiscal y administrativa, para la toma de decisiones de las entidades económicas nacionales e internacionales</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Flor Varela Pacheco</p>
+                        </div>
+                        <a href="#mapa" data-depto="contaduria" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix servicios depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Subdirección de Servicios Administrativos</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Es la encargada de orientación y dirección de los estudiantes en situaciones financieras y/o administrativas</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Pedro Iván Sáenz Sotelo</p>
+                        </div>
+                        <a href="#mapa" data-depto="serviciosyadministrativos" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix servicios depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Subdirección Académica</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Es encargada de orientación y dirección en general de los estudiantes. Cuándo se presenta algún problema este departamento es el encargado de proporcionar apoyo directo para solucionar la situación</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Jesús Daniel Hernández Camacho</p>
+                        </div>
+                        <a href="#mapa" data-depto="subdireccionacademica" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería Electromecánica</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionistas de excelencia en Ingeniería Electromecánica, con actitud emprendedora, con liderazgo y capacidad de: analizar, diagnosticar, diseñar, seleccionar, instalar, administrar, mantener e innovar sistemas electromecánicos, en forma eficiente, segura y económica</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Jesús Antonio Ruiz Ibarra</p>
+                        </div>
+                        <a href="#mapa" data-depto="electromecanica" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería en Gestión Empresarial</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar integralmente profesionales que contribuyan a la gestión de empresas e innovación de procesos; así como al diseño, implementación y desarrollo de sistemas estratégicos de negocios, optimizando recursos en un entorno global, con ética y responsabilidad social.</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Jessika Susana Soto Lerma</p>
+                        </div>
+                        <a href="#mapa" data-depto="gestionempresarial" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería Industrial</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionistas en el campo de la Ingeniería Industrial, lideres, creativos y emprendedores con visión sistémica; así como capacidad analítica y competitiva que le permita diseñar, implementar, mejorar, innovar, optimizar y administrar sistemas de producción de bienes</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Wendy Armas Vizcarra</p>
+                        </div>
+                        <a href="#mapa" data-depto="industrial" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería en Minería</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar Ingenieros en Minería competentes con sentido social y ético que
+                            desarrollen actividades de prospección, exploración, explotación y beneficio de los
+                            minerales metálicos y no metálicos</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Aarón César Vazquez Aguirre</p>
+                        </div>
+                        <a href="#mapa" data-depto="mineria" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Licenciatura en Administración</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionales de la administración capaces de actuar como agentes de cambio, a través del diseño, innovación y dirección en organizaciones, sensibles a las demandas sociales y oportunidades del entorno, con capacidad de intervención en ámbitos globales</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Flor Varela Pacheco</p>
+                        </div>
+                        <a href="#mapa" data-depto="administracion" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div><!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio A: Servicios Escolares</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentran los departamentos de Servicios escolares, Departamento de Servicios Generales, Titulación y Becas
+                            Los tramites que los estudiantes pueden realizar en estos departamentos son referentes a la solicitud de becas y su respectiva titulación, al igual que la solicitud y aprobación para ser acreedor de constancias.</p>
+                        </div>
+                        <a href="#mapa" data-depto="serviciosescolares" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería en Mecatrónica</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionistas en la Ingeniería Mecatrónica con capacidad analítica, crítica y creativa que le permita diseñar, proyectar, construir, innovar y administrar equipos y sistemas mecatrónicos en el sector social y productivo</p>
+                        </div>
+                        
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Jesús Antonio Ruiz Ibarra</p>
+                        </div>
+                        <a href="#mapa" data-depto="mecatronica" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix carreras depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Ingeniería Química</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Formar profesionistas en Ingeniería Química competentes para investigar, generar y aplicar el conocimiento científico y tecnológico, que le permita identificar y resolver problemas de diseño, operación, adaptación, optimización y administración en industrias químicas y de servicios</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">María del Carmen Avitia Talamantes</p>
+                        </div>
+                        <a href="#mapa" data-depto="quimica" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix servicios depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Desarrollo académico</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este departamento realiza las funciones de actividades oferta educativa, examen de admisión, tutorías, constancias docentes, año sabático, estímulo desempeño docente y capacitación formación docente y actualización profesional.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Hilda Georgina Luna Guerrero</p>
+                        </div>
+                        <a href="#mapa" data-depto="desarrolloacademico" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+                
+                <div class="mix edificios depto-nuevo depto" data-cy="direccion">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio Y: Dirección</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Es encargada de orientación y dirección de los estudiantes con situaciones académicas externas como lo son las residencias y servicio social </p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">José María Morales Sáenz</p>
+                        </div>
+                        <a href="#mapa" data-depto="direccion" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto" id="arreglar">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio AA: Laboratorio de Electromecánica</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este laboratorio asisten alumnos de la carrera de Electromecánica y Mecatrónica, hay cubículos en dónde están los encargados del mantenimiento del laboratorio.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Jorge Luis Estrada Juárez</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioaa" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio AB:  División de estudios profesionales</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edifico se encuentran las aulas AB-1 hasta AB-14, en la planta superior se encuentran los espacios de División de estudios profesionales y Económico Administrativo. En División de estudios profesionales se encuentran los coordinadores de todas las carreras.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Laura Sánchez Herrera</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioab" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja" data-cy="sistemas">
+                        <h3 class="depto__heading">Edificio AC: Laboratorios de Informática</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentran las aulas conocidas como centros de cómputo 1-2 y 5-9 dónde los alumnos de todas las carreras pueden tomar sus clases aunque se reserva más para la carrera de sistemas computacionales. También están los departamentos de asesorías, mantenimiento, la jefatura de sistemas computacionales. </p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">TBD</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioac" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-verde">
+                        <h3 class="depto__heading ">Edificio D: Aulas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con las aulas D-1 a D-8 para que los alumnos de todas las carreras tomen sus clases</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiod" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio B: Audiovisual / Local Sindical</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Espacio destinado para realizar presentaciones, principalmente, de proyectos y conferencias</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiob" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-verde">
+                        <h3 class="depto__heading ">Edificio C: Aulas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con las aulas C-1 a C-8 para que los alumnos de todas las carreras tomen sus clases</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioc" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio E: Química General</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con baños y con 2 laboratorios para los alumnos de la carrera de ingeniería en Química</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Alondra Adela Baca Chaparro</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioe" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio F: Enfermería</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con la enfermería de la institución dónde los alumnos pueden ir en caso de sentir algún malestar o pueden ir a solicitar y tramitar su cartilla del seguro médico. También cuenta con los cubículos de los profesores de la carrera de ingeniería en Química.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Dr. Ramón González Baca</p>
+                        </div>
+                        <a href="#mapa" data-depto="enfermeria" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio G: Nodo de creatividad/Radiodifusora</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio comprende los departamentos de comunicación y difusión en dónde se cuenta con la radiodifusora, el departamento de nodo de creatividad y la oficina de la sociedad de alumnos.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Arq. Elizabeth Salgado</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiog" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio H: Ingeniería Industrial</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentran los cubículos de los docentes de la carrera en ingeniería industrial, dónde se les da atención a los alumnos de la carrera.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Ana Karla Aguilera</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioh" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio I: Mantenimiento</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentra el personal encargado de dar mantenimiento a las zonas de la escuela, los estudiantes ahí realizan su servicio social o residencias profesionales. En ese mismo edificio se encuentra el comedor de los intendentes, espacio de música y el área de archivo muerto.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">
+                            Encargad@ del departamento:     
+                            </span><p class="depto__encargado">Marco Aurelio Sánchez Herrera</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioi" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio K: Ciencias Básicas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentra el departamento de ciencias básicas dónde se encuentran los docentes para las asesorías de ciencias básicas. </p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Melva Dennise</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiok" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio L:  Almacén</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentran los materiales que la institución ocupa para realizar los trámites. Los alumnos pueden liberar su servicio social recibiendo y entregando material. </p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Manuel Chávez Ibarra</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiol" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio M: Taller Maquinaria/Herramientas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Son 2 edificios unidos en uno solo, el departamento de Taller Maquinaria cuenta con un laboratorio para los estudiantes de electromecánica y mecatrónica. El laboratorio de Herramientas es para los estudiantes de ingeniería industrial.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Javier Enrique Alderete</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiom" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio O: Mercadotecnia</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Cuenta con las aulas O-1 a O-3 para que los estudiantes tomen clases, también se encuentra la oficina de Posgrado, en donde se realizan los trámites para la adquisición de una maestría.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Ing. Domínguez</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioo" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio R: Laboratorio de Química Integral</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En estos laboratorios se encuentran equipos necesarios para que los estudiantes de las carreras de Química y Minería practiquen, aunque los estudiantes de Mecatrónica, Ingeniería industrial y electromecánica también practican ahí.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Héctor Ávalos Loya</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificior" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio T: Laboratorio de Ingeniería Química</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio trabajan los alumnos de ingeniería química, practican y liberan su servicio social.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Alondra Adela Baca Chaparro</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiot" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio U: Centro de Cómputo</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio los alumnos pueden solicitar su correo institucional al igual que de aquí se recibe el número de referencia al que pagarán su inscripción.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Sergio Balderrama Porras</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiou" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio W: Centro de información</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se cuenta de manera general con el espacio de biblioteca, con su apartado para solicitud de libros al igual que su área común en dónde los estudiantes realizan sus tareas. Están los cubículos del centro de información, cuyo propósito es proporcionar a los estudiantes acceso a las bibliotecas virtuales con las que la escuela cuenta. </p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Sergio Núñez Carabeo</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiow" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio X: Administrativo</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este departamento es quien se encarga de realizar invitaciones a conferencistas y a las escuelas para la oferta educativa.</p>
+                        </div>
+                        <div class="depto__leader">
+                            <span class="depto__icon">Encargad@ Ciencias Básicas:     
+                            </span><p class="depto__encargado">Abigail Salgado</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiox" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-verde">
+                        <h3 class="depto__heading ">Edificio J: Aulas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con las aulas J-1 a J-8 en dónde los alumnos de todas las carreras pueden tomar clases</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioj" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio V: Cafetería/Papelería</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentra en la planta superior la cafetería de la institución, en la planta baja la papelería que tiene la escuela</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiov" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo">
+                        <h3 class="depto__heading">Edificio S: Ingeniería de métodos</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">En este edificio se encuentran los laboratorios S-1 y S-2 que es dónde alumnos de varias carreras toman sus clases ahí. Al igual que el laboratorio de ingeniería industrial, en dónde los alumnos de dicha carrera toman sus clases y se cuenta con maquinaria necesaria para dicha carrera.</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificios" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-naranja">
+                        <h3 class="depto__heading">Edificio P: Didáctico Experimental</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con un laboratorio didáctico experimental, el cual es destinado para la carrera de ingeniería química e ingeniería en minería.</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificiop" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-azul">
+                        <h3 class="depto__heading">Edificio Q: Laboratorio de Ciencias Básicas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Cuenta con las aulas Q1 y Q2 dónde alumnos de todas las carreras pueden tomar sus clases, al igual que el departamento de laboratorio de ciencias básicas en dónde se les imparten asesorías de todas las materias de ciencias, siendo todas las matemáticas y cálculos, química y física.</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificioq" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+                
+
+                <div class="mix edificios depto-nuevo depto">
+                    <div class="depto__titulo depto__titulo-verde">
+                        <h3 class="depto__heading ">Edificio N: Aulas</h3>
+                    </div>
+                    <div class="depto__info">
+                        <div class="depto__job">
+                            <p class="depto__texto">Este edificio cuenta con las aulas N-1 a N-8 para que los alumnos de todas las carreras tomen sus clases</p>
+                        </div>
+                        <a href="#mapa" data-depto="edificion" class="depto__boton">Ver Ubicación</a>
+                    </div> 
+                </div> <!-- Fin de la sección -->
+
+            </div>  <!-- Fin de las secciones -->
+        </div> <!-- Fin de .directorio__container -->
+    </section> <!-- Fin de la sección -->
+
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__texto">Todos los Derechos Reservados <span class="footer__year"></span> &copy;</p>
+        </div>
+    </footer> <!-- Fin del footer -->
+    
+    <!-- Scripts -->
+    
+    <!-- MixitUp -->
+    <script src="js/mixitup.min.js"></script>
+
+    <!-- ScrollReveal -->
+    <script src="js/scrollreveal.min.js"></script>
+
+    <!-- App.js -->
+    <script src="js/app.js"></script>
+
+    <!-- Archivo para PWA -->
+    <script src="js/itm.js"></script>
+</body>
+</html>
