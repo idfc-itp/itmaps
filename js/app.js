@@ -4,6 +4,7 @@ const formularioDirectorio = document.querySelector('.formulario__directorio');
 const formularioMapa = document.querySelector('.formulario__mapa');
 const deptos = document.querySelectorAll('.depto a');
 const mapaResultado = document.querySelector('.mapa__resultado');
+const mapaImg = document.querySelector('.mapa__img');
 
 const secciones = document.querySelector('.secciones');
 const mapa = document.querySelector('.mapa__content');
@@ -29,8 +30,9 @@ window.onload = ()=>{
     sr.reveal('.info__grid', {delay: 400});
     sr.reveal(mapa, {delay: 800, origin: 'bottom'});
     sr.reveal(secciones, {delay: 800, origin: 'top'});
-    mapaResultado.addEventListener('click', zoomMapa)
+    mapaResultado.addEventListener('click', zoomMapa);
 }
+
 formularioDirectorio.addEventListener('submit', validarFormulario);
 
 formularioMapa.addEventListener('submit', validarMapa);
@@ -63,6 +65,7 @@ function activeLink(){
 linkActive.forEach(link => link.addEventListener('click', activeLink));
 
 // Funciones
+
 //Función para validar el formulario del directorio
 function validarFormulario(e){
     e.preventDefault();
@@ -89,6 +92,7 @@ function validarFormulario(e){
             secciones.appendChild(divDepto);
             sr.reveal(divDepto, {delay: 500});
             input.value='';
+                sr.reveal(mapa);
             break;
         }else{
             if(depto === deptos[deptos.length -1]){
@@ -107,19 +111,17 @@ function validarFormulario(e){
     }, 7000);
 }
 function zoomMapa(){
-    const mapa = document.querySelector('.mapa__img');
     const scales = document.querySelectorAll('.scale');
     if(scales.length === 0){
-        mapa.classList.add('scale');   
+        mapaImg.classList.add('scale');   
         return;
     }
-    mapa.classList.remove('scale');
+    mapaImg.classList.remove('scale');
 }
 //Función que valida el formulario del mapa y muestra el contenido deseado
 function validarMapa(e){
     e.preventDefault();
     let formularioInput = document.querySelector('.formulario__mapa .formulario__input');
-    let mapaImg = document.querySelector('.mapa__img');
     formularioInput.value = formularioInput.value.toLowerCase();
     formularioInput.value = formularioInput.value.trim();
     formularioInput.value = formularioInput.value.replace('á', 'a');
@@ -135,76 +137,120 @@ function validarMapa(e){
     }
     switch(formularioInput.value){
         case "direccion":
-            mapaImg.src = './img/rutas/mapa_direccion.jpg';
-            break;
-        case "sistemas":
+            mapaImg.src = './img/rutas/Dirección.jpg';
+                sr.reveal(mapaResultado, {delay: 200});
+        break;
         case "edificioac":
-            mapaImg.src = './img/rutas/mapa_ac.jpg';
-            break;
+        case "sistemas":
+            mapaImg.src = './img/rutas/Laboratorios de Informática.jpg';
+                sr.reveal(mapaResultado, {delay: 200});
+        break;
         case "contaduria":
             mapaImg.src = './img/contaduria.jpg';
-            break;
+                sr.reveal(mapaResultado, {delay: 200});
+        break;
         case "serviciosescolares":
-            mapaImg.src = './img/rutas/mapa_escolares.jpg';
-            console.log(mapaImg.src);
+            mapaImg.src = './img/rutas/Servicios Escolares.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
         break;
-        case "administracion":
-            mapaImg.src = './img/administracion.jpg';
+        
+        case "edificiou":
+        case "centrodeinformacion":
+            mapaImg.src = './img/rutas/Centro de Información.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
         break;
+
+        case "audiovisual":
+            mapaImg.src = './img/rutas/Audiovisual.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
+        break;
+
+        case "Serviciosyadministrativos":
+            mapaImg.src = './img/rutas/Administrativo.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
+        break;
+
+        // case "administracion":
+        //     mapaImg.src = './img/administracion.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
        
-        case "arquitectura":
-            mapaImg.src = './img/arquitectura.webp';
+        // case "arquitectura":
+        //     mapaImg.src = './img/arquitectura.webp';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
+
+        // case "edificiot":
+        //     mapaImg.src = './img/rutas/mapa_T.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
+
+        case "quimica":
+        case "quimicageneral":
+            mapaImg.src = './img/rutas/Química General.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
         break;
 
-        case "edificiot":
-            mapaImg.src = './img/rutas/mapa_T.jpg';
-        break;
-    
-        case "edificios":
-            mapaImg.src = './img/rutas/mapa_s.jpg';
+        // case "edificios":
+        //     mapaImg.src = './img/rutas/mapa_s.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
+
+        // case "edificior":
+        //     mapaImg.src = './img/rutas/mapa_r.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
+
+        case "edificioc":
+            mapaImg.src = './img/rutas/Aulas C.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
         break;
 
-        case "edificior":
-            mapaImg.src = './img/rutas/mapa_r.jpg';
-        break;
+        // case "edificiod":
+        //     mapaImg.src = './img/rutas/Aulas D.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
 
-        case "edificiop":
-            mapaImg.src = './img/rutas/mapa_p.jpg';
-        break;
+        // case "edificiop":
+        //     mapaImg.src = './img/rutas/mapa_p.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
 
-        case "edificiom":
-            mapaImg.src = './img/rutas/mapa_m.jpg';
-        break;
+        // case "edificiom":
+        //     mapaImg.src = './img/rutas/mapa_m.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
 
-        case "edificiok":
-            mapaImg.src = './img/rutas/mapa_k.jpg';
-        break;
+        // case "edificiok":
+        //     mapaImg.src = './img/rutas/mapa_k.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
 
-        case "edificioh":
-            mapaImg.src = './img/rutas/mapa_H.jpg';
-        break;
+        // case "edificioh":
+        //     mapaImg.src = './img/rutas/mapa_H.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
 
-        case "edificioe":
-            mapaImg.src = './img/rutas/mapa_E.jpg';
-        break;
+        // case "edificioe":
+        //     mapaImg.src = './img/rutas/mapa_E.jpg';
+        //     sr.reveal(mapaResultado, {delay: 200});
+        // break;
 
         case "edificioaa":
-            mapaImg.src = './img/rutas/mapa_aa.jpg';
+        case "electromecanica":
+            mapaImg.src = './img/rutas/Laboratorio de Electromecánica.jpg';
+            sr.reveal(mapaResultado, {delay: 200});
         break;
 
         default: 
-            mapaImg.src = './img/mapa.jpg'
+            mapaImg.src = './img/rutas/mapa.jpg'
             mostrarAlerta('No se encontró el destino deseado, intenta con otro', document.querySelector('.mapa__alerta'));
             formularioInput.value = '';
-            break;
+            sr.reveal(mapaResultado, {delay: 200});
+        break;
     }
-    // if(formularioInput.value.length < 5){
-    //     mostrarAlerta('Término de búsqueda no válido, intenta con otro', document.querySelector('.mapa__alerta'));
-    //     formularioInput.value = '';
-    //     return;
-    // }
-
 }
+
 //Función que muestra un mensaje de error
 function mostrarAlerta(mensaje, ubicacion){
     volver = secciones;
